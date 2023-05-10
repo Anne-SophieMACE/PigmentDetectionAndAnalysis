@@ -10,13 +10,10 @@
  * 
  * tested on ImageJ v1.52p on PC & MAC
  * CAREFUL this version requires 1.52p (does not work in version 1.53c or 1.53t because the ROIs are not 
- * correctly associated with the slices!!
+ * correctly associated with the slices!!)
  */
 
 // checks the Fiji version
-
-print(getVersion());
-
 if( indexOf(getVersion(),"1.52p") == -1 )
 	exit("This macro requires Fiji 1.52p");
 
@@ -344,6 +341,7 @@ mean_value_tr = newArray(nb_detected_spots);
 prop_pos_pix_tr = newArray(nb_detected_spots);
 max_bg_val_tr = detectSignalAround(img_name_substack,"trans_img",transPos,min_value_tr,nb_detected_spots,1/pix_size_img,nbAddZ,mean_value_tr,"min",nbCell);
 
+run("Clear Results");
 // red channel exists: we save the threshold and close the image
 if( redPos != -1 ){
 	setResult("Threshold red", 0, max_bg_val_red);
