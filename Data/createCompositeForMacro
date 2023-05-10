@@ -1,0 +1,8 @@
+The 5colors 47 slices stack needs to be re-created:
+First, import the Data as Image Sequence in Fiji:
+File > Import > Image Sequence
+This will open a 235 slices stack.
+Then convert in 5-colors 47 slices by:
+Image > HyperStack > Stack to HyperStack
+Choose the order as : xyczt; 5 colors and 47 slices
+Save this as TIFF, and choose this file at the beginning of the macro
